@@ -488,10 +488,10 @@ public:
 };
 class frontM : public Drawable
 {
-private:
+private: // back target
 	glm::vec3 p;
 	std::vector<Vertex> vertices;
-	float m_speed = 10;
+	float m_speed = 10; 
 	bool live = true;
 public:
 	frontM(const glm::vec3& pos) :
@@ -575,10 +575,10 @@ public:
 };
 class leftM : public Drawable
 {
-private:
+private: // right target
 	glm::vec3 p;
 	std::vector<Vertex> vertices;
-	float m_speed = 10;
+	float m_speed = 10; 
 	bool live = true;
 public:
 	leftM(const glm::vec3& pos) :
@@ -659,11 +659,11 @@ public:
 };
 class shot : public Drawable
 {
-private:
+private: //bullet speed
 	glm::vec3 p;
 	std::vector<Vertex> vertices;
 	bool ready = true;
-	float speed = 70;
+	float speed = 70; 
 	glm::vec3 newd;
 public:
 	shot(const glm::vec3& pos) :
@@ -976,7 +976,7 @@ public:
 		}
 		if (ammo == 0&& score!=12)
 		{
-			cout << "Defeat" << endl;
+			cout << "DEFEAT" << endl;
 		}
 	};
 	void AnimateCamera(GLFWwindow* Window, float timeDelta)
@@ -1025,6 +1025,8 @@ void on_error(int code, const char* text)
 int main()
 {
 	std::cout << "Starting GLFW context, OpenGL 3.3" << std::endl;
+	std::cout << "Shooting Simulator By Georgi Rusev"<< std::endl;
+	std::cout << "Enjoy playing and Good Luck :)" << std::endl;
 
 	glfwInit();
 
